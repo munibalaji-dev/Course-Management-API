@@ -28,4 +28,14 @@ public class CourseController {
     public ResponseEntity<List<CourseDto>> getAllStudents(){
         return new ResponseEntity<>(courseService.getAllStudents(), HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CourseDto> getCourseById(@PathVariable("id") long id){
+        return new ResponseEntity<>(courseService.getCourseById(id), HttpStatus.OK);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<CourseDto> updateCourseById(@PathVariable("id") long id, @RequestBody CourseDto courseDto){
+        return new ResponseEntity<>(courseService.updateCourseById(id, courseDto), HttpStatus.OK);
+    }
 }
