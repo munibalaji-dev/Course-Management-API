@@ -21,7 +21,7 @@ public class CourseServiceImplementation implements CourseService{
     private static final String GETALL_COURSES = BASE_URL;
     private static final String GETCOURSE_BYID = BASE_URL+"/{id}";
     private static final String UPDATE_COURSE = BASE_URL+"/{id}";
-//    private static final String DELETE_COURSE = BASE_URL+"/{id}";
+    private static final String DELETE_COURSE = BASE_URL+"/{id}";
 
 
     private RestTemplateBuilder restTemplateBuilder;
@@ -111,6 +111,21 @@ public class CourseServiceImplementation implements CourseService{
         courseDto1.setPrice(req.getPrice());
 
 
+        return courseSecondDto;
+    }
+
+    @Override
+    public CourseDto deleteCourseById(long id) {
+        RestTemplate restTemplate = restTemplateBuilder.build();
+         ResponseEntity<CourseSecondDto> response = restTemplate.exchange(
+                 DELETE_COURSE,
+                 HttpMethod.DELETE,
+                 null,
+                 CourseSecondDto.class,
+                 id
+                 );
+
+         CourseSecondDto courseSecondDto = response.getBody();
         return courseSecondDto;
     }
 }

@@ -38,4 +38,9 @@ public class CourseController {
     public ResponseEntity<CourseDto> updateCourseById(@PathVariable("id") long id, @RequestBody CourseDto courseDto){
         return new ResponseEntity<>(courseService.updateCourseById(id, courseDto), HttpStatus.OK);
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<CourseDto> deleteCourseById(@PathVariable("id") long id){
+        return new ResponseEntity<>(courseService.deleteCourseById(id), HttpStatus.OK);
+    }
 }
