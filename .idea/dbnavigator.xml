@@ -30,7 +30,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="3cbaa6cb-1fad-41d8-b5fa-02761447a024">
-      <console name="MySQL For Course Management" type="STANDARD" schema="mysql" session="Main" />
+      <console name="MySQL For Course Management" type="STANDARD" schema="coursemanagement" session="Main"><![CDATA[select *from course;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -39,6 +39,7 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" object-ref="schemas/coursemanagement/tables/course" />
+      <object connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" object-ref="consoles/MySQL For Course Management" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabasePrerequisiteManager">
@@ -48,15 +49,23 @@
     <connection id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" dataset="coursemanagement.course" active-filter-id="fbaff17d-3c61-4244-a343-480d767bb289">
+    <filter-actions connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" dataset="coursemanagement.course" active-filter-id="EMPTY_FILTER">
       <filter id="fbaff17d-3c61-4244-a343-480d767bb289" name="2" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="2" active="true" />
       </filter>
     </filter-actions>
   </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces>
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -613,5 +622,9 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+    <execution-variable-types />
   </component>
 </project>
