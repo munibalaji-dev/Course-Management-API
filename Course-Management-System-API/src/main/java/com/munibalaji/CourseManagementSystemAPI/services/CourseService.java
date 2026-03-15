@@ -1,14 +1,13 @@
 package com.munibalaji.CourseManagementSystemAPI.services;
 
 import com.munibalaji.CourseManagementSystemAPI.dtos.CourseDto;
-import com.munibalaji.CourseManagementSystemAPI.models.Course;
 
 import java.util.List;
 
 public interface CourseService {
     CourseDto createCourse(CourseDto courseDto);
 
-    List<CourseDto> getAllStudents();
+    List<CourseDto> getAllCourses();
 
     CourseDto getCourseById(long id);
 

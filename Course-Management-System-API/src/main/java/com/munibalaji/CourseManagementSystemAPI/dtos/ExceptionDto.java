@@ -4,16 +4,21 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 public class ExceptionDto{
 
-    private HttpStatus httpStatus;
     private String message;
+    private int httpStatus;
+    private LocalDate timestamp;
 
-    public ExceptionDto(HttpStatus httpStatus,
-                        String message){
+    public ExceptionDto(String message, int httpStatus){
         this.httpStatus = httpStatus;
         this.message = message;
+        this.timestamp = LocalDate.now();
+
     }
+
 }

@@ -1,11 +1,13 @@
 package com.munibalaji.CourseManagementSystemAPI.models;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Course {
+@Entity
+public class Course extends BaseModel {
 
     private String title;
     private String instructor;

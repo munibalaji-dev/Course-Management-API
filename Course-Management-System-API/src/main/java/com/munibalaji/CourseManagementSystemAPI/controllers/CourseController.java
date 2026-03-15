@@ -22,11 +22,12 @@ public class CourseController {
     @PostMapping
     public ResponseEntity<CourseDto> createCourse(@RequestBody CourseDto courseDto){
         return new ResponseEntity<>(courseService.createCourse(courseDto), HttpStatus.OK);
+
     }
 
     @GetMapping
-    public ResponseEntity<List<CourseDto>> getAllStudents(){
-        return new ResponseEntity<>(courseService.getAllStudents(), HttpStatus.OK);
+    public ResponseEntity<List<CourseDto>> getALlCourses(){
+        return new ResponseEntity<>(courseService.getAllCourses(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -43,4 +44,5 @@ public class CourseController {
     public ResponseEntity<CourseDto> deleteCourseById(@PathVariable("id") long id){
         return new ResponseEntity<>(courseService.deleteCourseById(id), HttpStatus.OK);
     }
+
 }
