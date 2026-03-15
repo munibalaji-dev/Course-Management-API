@@ -9,9 +9,9 @@ import lombok.Setter;
 @Entity
 public class Course extends BaseModel {
 
-    private String title;
+    private String courseName;
     private String instructor;
-    private int duration;
-    private double price;
+    private Integer duration;
+    private Double price;
 
 }

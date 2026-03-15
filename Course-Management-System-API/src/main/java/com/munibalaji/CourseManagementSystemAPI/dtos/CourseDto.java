@@ -11,12 +11,12 @@ import lombok.Setter;
 public class CourseDto {
 
         private long id;
-        @NotBlank(message = "Title cannot be empty")
-        private String title;
-        @NotBlank(message = "Instructor name cannot be empty")
+        @NotBlank
+        private String courseName;
+        @NotBlank
         private String instructor;
-        @NotNull(message = "Duration is required")
+        @NotNull
         private Integer duration;
-        @Positive(message = "Price must be greater than 0")
+        @Positive
         private Double price;
 }

@@ -22,7 +22,7 @@ public class CourseMapper {
 
         Course course = new Course();
         course.setId(courseDto.getId());
-        course.setTitle(courseDto.getTitle());
+        course.setCourseName(courseDto.getCourseName());
         course.setInstructor(courseDto.getInstructor());
         course.setDuration(courseDto.getDuration());
         course.setPrice(courseDto.getPrice());
@@ -44,7 +44,7 @@ public class CourseMapper {
 
         CourseDto courseDto = new CourseDto();
         courseDto.setId(course.getId());
-        courseDto.setTitle(course.getTitle());
+        courseDto.setCourseName(course.getCourseName());
         courseDto.setInstructor(course.getInstructor());
         courseDto.setDuration(course.getDuration());
         courseDto.setPrice(course.getPrice());

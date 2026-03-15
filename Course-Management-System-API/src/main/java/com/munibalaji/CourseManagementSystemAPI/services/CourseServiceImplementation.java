@@ -46,7 +46,7 @@ public class CourseServiceImplementation implements CourseService{
 
 
 
-//        -----Before To call an external api I used the rest template-------
+//        -----To call an external api I used the rest template-------
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
 //        SecondCourseDto request = CourseMapper.courseDtotoEntity(courseDto);
@@ -84,7 +84,7 @@ public class CourseServiceImplementation implements CourseService{
     @Override
     public List<CourseDto> getAllCourses() {
 
-//          -------Before To call an external api I used the rest template--------
+//          -------To call an external api I used the rest template--------
 
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
@@ -116,7 +116,7 @@ public class CourseServiceImplementation implements CourseService{
     @Override
     public CourseDto getCourseById(long id) {
 
-//         ------Before To call an external api I used the rest template-------
+//         ------To call an external api I used the rest template-------
 //        RestTemplate template = restTemplateBuilder.build();
 //
 //        ResponseEntity<SecondCourseDto> response = template.getForEntity(
@@ -146,7 +146,7 @@ public class CourseServiceImplementation implements CourseService{
 
 
 
-//       -------- Before to call an external api I used the rest template----------
+//       -------- To call an external api I used the rest template----------
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
 //        SecondCourseDto req = CourseMapper.courseDtotoEntity(courseDto);
@@ -188,7 +188,7 @@ public class CourseServiceImplementation implements CourseService{
         Course course = courseRepository.findById(id).orElseThrow(()->new RuntimeException("Course Not Found with id : "+id));
 
         course.setId(courseDto.getId());
-        course.setTitle(courseDto.getTitle());
+        course.setCourseName(courseDto.getCourseName());
         course.setInstructor(courseDto.getInstructor());
         course.setDuration(courseDto.getDuration());
         course.setPrice(courseDto.getPrice());
@@ -210,7 +210,7 @@ public class CourseServiceImplementation implements CourseService{
     @Override
     public CourseDto deleteCourseById(long id) {
 
-//         -------Before To call an external api I used the rest template--------
+//         -------To call an external api I used the rest template--------
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
 //         ResponseEntity<SecondCourseDto> response = restTemplate.exchange(
