@@ -8,15 +8,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CourseDto {
+public class CourseResponseDto {
 
         private long id;
-        @NotBlank
         private String courseName;
-        @NotBlank
         private String instructor;
-        @NotNull
         private Integer duration;
-        @Positive
         private Double price;
 }

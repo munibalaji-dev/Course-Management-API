@@ -1,17 +1,18 @@
 package com.munibalaji.CourseManagementSystemAPI.services;
 
-import com.munibalaji.CourseManagementSystemAPI.dtos.CourseDto;
+import com.munibalaji.CourseManagementSystemAPI.dtos.CourseRequestDto;
+import com.munibalaji.CourseManagementSystemAPI.dtos.CourseResponseDto;
 
 import java.util.List;
 
 public interface CourseService {
-    CourseDto createCourse(CourseDto courseDto);
+    CourseResponseDto createCourse(CourseRequestDto courseRequestDto);
 
-    List<CourseDto> getAllCourses();
+    List<CourseResponseDto> getAllCourses();
 
-    CourseDto getCourseById(long id);
+    CourseResponseDto getCourseById(Long id);
 
-    CourseDto updateCourseById(long id, CourseDto courseDto);
+    CourseResponseDto updateCourseById(Long id, CourseRequestDto courseRequestDto);
 
-    CourseDto deleteCourseById(long id);
+    CourseResponseDto deleteCourseById(Long id);
 }

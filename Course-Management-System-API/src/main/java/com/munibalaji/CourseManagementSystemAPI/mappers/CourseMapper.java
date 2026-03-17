@@ -1,55 +1,57 @@
 package com.munibalaji.CourseManagementSystemAPI.mappers;
 
-import com.munibalaji.CourseManagementSystemAPI.dtos.CourseDto;
+import com.munibalaji.CourseManagementSystemAPI.dtos.CourseRequestDto;
+import com.munibalaji.CourseManagementSystemAPI.dtos.CourseResponseDto;
 import com.munibalaji.CourseManagementSystemAPI.models.Course;
-import com.munibalaji.CourseManagementSystemAPI.thirdparty_dtos.SecondCourseDto;
 
 public class CourseMapper {
 
-    public static Course courseDtotoEntity(CourseDto courseDto){
+    public static Course courseRequestDtotoEntity(CourseRequestDto courseRequestDto){
 
-        if (courseDto == null){
+        if (courseRequestDto == null){
             return null;
         }
+        // when i am using the rest template I wrote this mapping
 //        SecondCourseDto secondCourseDto = new SecondCourseDto();
-//        secondCourseDto.setId(courseDto.getId());
-//        secondCourseDto.setTitle(courseDto.getTitle());
-//        secondCourseDto.setInstructor(courseDto.getInstructor());
-//        secondCourseDto.setDuration(courseDto.getDuration());
-//        secondCourseDto.setPrice(courseDto.getPrice());
+//        secondCourseDto.setId(courseResponseDto.getId());
+//        secondCourseDto.setTitle(courseResponseDto.getTitle());
+//        secondCourseDto.setInstructor(courseResponseDto.getInstructor());
+//        secondCourseDto.setDuration(courseResponseDto.getDuration());
+//        secondCourseDto.setPrice(courseResponseDto.getPrice());
 
 //        return secondCourseDto;
 
         Course course = new Course();
-        course.setId(courseDto.getId());
-        course.setCourseName(courseDto.getCourseName());
-        course.setInstructor(courseDto.getInstructor());
-        course.setDuration(courseDto.getDuration());
-        course.setPrice(courseDto.getPrice());
+//        course.setId(courseRequestDto.getId());
+        course.setCourseName(courseRequestDto.getCoursename());
+        course.setInstructor(courseRequestDto.getInstructor());
+        course.setDuration(courseRequestDto.getDuration());
+        course.setPrice(courseRequestDto.getPrice());
 
         return course;
     }
-    public static CourseDto entitytoCourseDto(Course course){
+    public static CourseResponseDto entitytoCourseResponseDto(Course course){
 
         if (course == null){
             return null;
         }
-//        CourseDto courseDto = new CourseDto();
-//        courseDto.setId(secondCourseDto.getId());
-//        courseDto.setTitle(secondCourseDto.getTitle());
-//        courseDto.setInstructor(secondCourseDto.getInstructor());
-//        courseDto.setDuration(secondCourseDto.getDuration());
-//        courseDto.setPrice(secondCourseDto.getPrice());
+        // when i am using the rest template I wrote this mapping
+//        CourseResponseDto courseResponseDto = new CourseResponseDto();
+//        courseResponseDto.setId(secondCourseDto.getId());
+//        courseResponseDto.setTitle(secondCourseDto.getTitle());
+//        courseResponseDto.setInstructor(secondCourseDto.getInstructor());
+//        courseResponseDto.setDuration(secondCourseDto.getDuration());
+//        courseResponseDto.setPrice(secondCourseDto.getPrice());
 
 
-        CourseDto courseDto = new CourseDto();
-        courseDto.setId(course.getId());
-        courseDto.setCourseName(course.getCourseName());
-        courseDto.setInstructor(course.getInstructor());
-        courseDto.setDuration(course.getDuration());
-        courseDto.setPrice(course.getPrice());
+        CourseResponseDto courseResponseDto = new CourseResponseDto();
+        courseResponseDto.setId(course.getId());
+        courseResponseDto.setCourseName(course.getCourseName());
+        courseResponseDto.setInstructor(course.getInstructor());
+        courseResponseDto.setDuration(course.getDuration());
+        courseResponseDto.setPrice(course.getPrice());
 
-        return courseDto;
+        return courseResponseDto;
     }
 
 

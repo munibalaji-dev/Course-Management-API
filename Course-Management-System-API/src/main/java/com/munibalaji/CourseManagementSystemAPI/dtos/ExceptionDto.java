@@ -14,7 +14,7 @@ public class ExceptionDto{
     private int httpStatus;
     private LocalDate timestamp;
 
-    public ExceptionDto(String message, int httpStatus){
+    public ExceptionDto(String message, int httpStatus){ // here why I shouldn't pass timestamp Because timestamp should be generated automatically, not passed manually
         this.httpStatus = httpStatus;
         this.message = message;
         this.timestamp = LocalDate.now();
