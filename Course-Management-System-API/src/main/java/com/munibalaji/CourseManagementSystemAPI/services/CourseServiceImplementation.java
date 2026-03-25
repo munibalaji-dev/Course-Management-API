@@ -42,24 +42,24 @@ public class CourseServiceImplementation implements CourseService{
 //        -----To call an external api I used the rest template-------
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
-//        SecondCourseDto request = CourseMapper.courseDtotoEntity(courseResponseDto);
+//        Course saved = CourseMapper.courseRequestDtoToEntity(courseRequestDto);
 
         // Removed After Mapper Added
-//        SecondCourseDto request = new SecondCourseDto();
-//        request.setId(courseResponseDto.getId());
-//        request.setTitle(courseResponseDto.getTitle());
-//        request.setInstructor(courseResponseDto.getInstructor());
-//        request.setDuration(courseResponseDto.getDuration());
-//        request.setPrice(courseResponseDto.getPrice());
+//        Course request = new Course();
 
-//        ResponseEntity<SecondCourseDto> response = restTemplate.postForEntity(
+//        request.setTitle(courseRequestDto.getTitle());
+//        request.setInstructor(courseRequestDto.getInstructor());
+//        request.setDuration(courseRequestDto.getDuration());
+//        request.setPrice(courseRequestDto.getPrice());
+
+//        ResponseEntity<CourseResponseDto> response = restTemplate.postForEntity(
 //                CREATE_COURSE,
-//                request,
-//                SecondCourseDto.class
+//                saved,
+//                CourseResponseDto.class
 //        );
 //
-//        SecondCourseDto secondCourseDto = response.getBody();
-//        return entitytoCourseDto(secondCourseDto);
+//        CourseResponseDto courseres = response.getBody();
+//        return courseres;
 
 
 
@@ -81,18 +81,14 @@ public class CourseServiceImplementation implements CourseService{
 
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
-//        ResponseEntity<SecondCourseDto[]> response = restTemplate.getForEntity(
+//        ResponseEntity<CourseResponseDto[]> response = restTemplate.getForEntity(
 //                GETALL_COURSES,
-//                SecondCourseDto[].class
+//                CourseResponseDto[].class
 //        );
 //
-//        SecondCourseDto[] secondCourseDto = response.getBody();
+//        CourseResponseDto[] courses = response.getBody();
 
-//        return Arrays.asList(secondCourseDto);
-
-//        return Arrays.stream(secondCourseDto)
-//                .map(CourseMapper::entitytoCourseDto)
-//                .toList();
+//        return Arrays.asList(courses);
 
 
         // After Connected to my own DB
@@ -112,15 +108,15 @@ public class CourseServiceImplementation implements CourseService{
 //         ------To call an external api I used the rest template-------
 //        RestTemplate template = restTemplateBuilder.build();
 //
-//        ResponseEntity<SecondCourseDto> response = template.getForEntity(
+//        ResponseEntity<CourseResponseDto> response = template.getForEntity(
 //                GETCOURSE_BYID,
-//                SecondCourseDto.class,
+//                CourseResponseDto.class,
 //                id
 //        );
 //
-//        SecondCourseDto secondCourseDto = response.getBody();
+//        CourseResponseDto getById = response.getBody();
 //
-//        return entitytoCourseDto(secondCourseDto);
+//        return getById;
 
 
 
@@ -142,45 +138,34 @@ public class CourseServiceImplementation implements CourseService{
 //       -------- To call an external api I used the rest template----------
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
-//        SecondCourseDto req = CourseMapper.courseDtotoEntity(courseResponseDto);
+//        CourseResponseDto saved = CourseMapper.courseRequestDtoToEntity(courseRequestDto);
 
         // Before To call an external api we use the rest template
         // Removed After Mapper Added
-//        SecondCourseDto req = new SecondCourseDto();
-//        req.setId(courseResponseDto.getId());
-//        req.setTitle(courseResponseDto.getTitle());
-//        req.setInstructor(courseResponseDto.getInstructor());
-//        req.setPrice(courseResponseDto.getPrice());
+//        Course req = new Course();
+
+//        req.setTitle(courseRequestDto.getTitle());
+//        req.setInstructor(courseRequestDto.getInstructor());
+//        req.setPrice(courseRequestDto.getPrice());
 
 
-//        ResponseEntity<SecondCourseDto> response = restTemplate.exchange(
+//        ResponseEntity<CourseResponseDto> response = restTemplate.exchange(
 //                UPDATE_COURSE,
 //                HttpMethod.PUT,
-//                new HttpEntity<>(req),
-//                SecondCourseDto.class,
+//                new HttpEntity<>(saved),
+//                CourseResponseDto.class,
 //                id
 //        );
 //
-//        SecondCourseDto updatedCourse = response.getBody();
+//        CourseResponseDto updatedCourse = response.getBody();
 
-
-        // Removed After Mapper Added
-//        CourseResponseDto courseDto1 = new CourseResponseDto();
-//        courseDto1.setId(req.getId());
-//        courseDto1.setTitle(req.getTitle());
-//        courseDto1.setInstructor(req.getInstructor());
-//        courseDto1.setDuration(req.getDuration());
-//        courseDto1.setPrice(req.getPrice());
-
-
-//         return entitytoCourseDto(updatedCourse);
-
+//        return updatedCourse;
 
 
         // After Connected to my Own Course Management DataBase
-        Course course = courseRepository.findById(id).orElseThrow(()->new RuntimeException("Course Not Found with id : "+id));
+        Course course = courseRepository.findById(id).orElseThrow(()->new NotFoundException("Course Not Found to update with id : "+id));
 
-//        course.setId(courseRequestDto.getId());
+
         course.setCourseName(courseRequestDto.getCoursename());
         course.setInstructor(courseRequestDto.getInstructor());
         course.setDuration(courseRequestDto.getDuration());
@@ -206,18 +191,18 @@ public class CourseServiceImplementation implements CourseService{
 //         -------To call an external api I used the rest template--------
 
 //        RestTemplate restTemplate = restTemplateBuilder.build();
-//         ResponseEntity<SecondCourseDto> response = restTemplate.exchange(
+//         ResponseEntity<CourseResponseDto> response = restTemplate.exchange(
 //                 DELETE_COURSE,
 //                 HttpMethod.DELETE,
 //                 null,
-//                 SecondCourseDto.class,
+//                 CourseResponseDto.class,
 //                 id
 //                 );
 
         // Removed After Mapper Added
-//         SecondCourseDto secondCourseDto = response.getBody();
+//         CourseResponseDto deleted = response.getBody();
 //
-//        return SecondCourseDtoToCourseDto(secondCourseDto); // I provide data in return even delete happen
+//        return deleted;
         //              (or)
 //        restTemplate.delete(DELETE_COURSE, id); // here I send the null
 //        return null;
@@ -226,7 +211,7 @@ public class CourseServiceImplementation implements CourseService{
 
 
         // After Connected to my own database
-        Course course = courseRepository.findById(id).orElseThrow(()->new NotFoundException("Course not found with id : "+id));
+        Course course = courseRepository.findById(id).orElseThrow(()->new NotFoundException("Course not found to delete with id : "+id));
         courseRepository.delete(course);
         return CourseMapper.entitytoCourseResponseDto(course);
 

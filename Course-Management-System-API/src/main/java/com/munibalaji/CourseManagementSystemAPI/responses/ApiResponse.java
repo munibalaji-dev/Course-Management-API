@@ -1,5 +1,10 @@
 package com.munibalaji.CourseManagementSystemAPI.responses;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ApiResponse<T>{
 
     private boolean success;
@@ -10,17 +15,5 @@ public class ApiResponse<T>{
         this.success = success;
         this.message = message;
         this.data = data;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public T getData() {
-        return data;
     }
 }

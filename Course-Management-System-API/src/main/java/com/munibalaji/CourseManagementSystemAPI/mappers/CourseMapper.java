@@ -11,18 +11,9 @@ public class CourseMapper {
         if (courseRequestDto == null){
             return null;
         }
-        // when i am using the rest template I wrote this mapping
-//        SecondCourseDto secondCourseDto = new SecondCourseDto();
-//        secondCourseDto.setId(courseResponseDto.getId());
-//        secondCourseDto.setTitle(courseResponseDto.getTitle());
-//        secondCourseDto.setInstructor(courseResponseDto.getInstructor());
-//        secondCourseDto.setDuration(courseResponseDto.getDuration());
-//        secondCourseDto.setPrice(courseResponseDto.getPrice());
-
-//        return secondCourseDto;
 
         Course course = new Course();
-//        course.setId(courseRequestDto.getId());
+
         course.setCourseName(courseRequestDto.getCoursename());
         course.setInstructor(courseRequestDto.getInstructor());
         course.setDuration(courseRequestDto.getDuration());
@@ -35,13 +26,6 @@ public class CourseMapper {
         if (course == null){
             return null;
         }
-        // when i am using the rest template I wrote this mapping
-//        CourseResponseDto courseResponseDto = new CourseResponseDto();
-//        courseResponseDto.setId(secondCourseDto.getId());
-//        courseResponseDto.setTitle(secondCourseDto.getTitle());
-//        courseResponseDto.setInstructor(secondCourseDto.getInstructor());
-//        courseResponseDto.setDuration(secondCourseDto.getDuration());
-//        courseResponseDto.setPrice(secondCourseDto.getPrice());
 
 
         CourseResponseDto courseResponseDto = new CourseResponseDto();

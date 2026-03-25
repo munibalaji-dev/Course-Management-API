@@ -16,6 +16,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
     <assistants>
+      <assistant-state connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+        <tools />
+      </assistant-state>
       <assistant-state connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="FCF9B411737C4994A58967CE0EE0A9B3" availability="AVAILABLE" acknowledgement="ENGAGED" selected="true">
         <chats>
           <chat id="FCF9B411737C4994A58967CE0EE0A9B3" title="" session-signature="" timestamp="1773589675333">
@@ -23,9 +26,6 @@
             <context provider="" profile="" model="" action="" interactive="true" />
           </chat>
         </chats>
-        <tools />
-      </assistant-state>
-      <assistant-state connection-id="3cbaa6cb-1fad-41d8-b5fa-02761447a024" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
         <tools />
       </assistant-state>
     </assistants>
@@ -211,7 +211,7 @@ drop table course;]]></console>
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
@@ -235,7 +235,7 @@ drop table course;]]></console>
           <azure-token-tenant-id value="" />
           <azure-token-client-id value="" />
           <azure-token-client-certificate-file value="" />
-          <session-user value="" />
+          <session-user value="muni.mysql@localhost" />
         </database>
         <properties>
           <auto-commit value="false" />

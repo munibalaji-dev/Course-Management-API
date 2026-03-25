@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@Tag(name = "Course API", description = "Operations related to courses")
+@Tag(name = "Courses ", description = "Operations related to courses")
 @RestController
 @RequestMapping("/api/courses")
 public class CourseController {
@@ -39,6 +39,8 @@ public class CourseController {
 
     }
 
+
+
     @Operation(summary = "Get all courses")
     @GetMapping
     public ResponseEntity<ApiResponse<List<CourseResponseDto>>>getALlCourses(){
@@ -49,6 +51,8 @@ public class CourseController {
         ApiResponse<List<CourseResponseDto>> apiResponse = new ApiResponse(true, "Courses fetched successfully", fetching);
         return new ResponseEntity<>(apiResponse,HttpStatus.OK);
     }
+
+
 
     @Operation(summary = "Get course by using course id")
     @GetMapping("/{id}")
